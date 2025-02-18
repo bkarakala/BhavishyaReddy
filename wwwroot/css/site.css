@@ -1,0 +1,519 @@
+﻿/* ===== Global Styles ===== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: 400;
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+/* ===== Background Image for Home Page Only ===== */
+.home-container {
+    background: url('/images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    animation: fadeInUp 1.5s ease-out; /* Adding an animation effect for the entire home container */
+}
+
+/* Ensure other pages have a plain background */
+.default-container {
+    background-color: white;
+    min-height: 100vh;
+    padding-top: 80px;
+}
+
+/* ===== Navigation Bar Styling ===== */
+.navbar {
+    font-family: "Helvetica", "Arial", sans-serif;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding-left: 0;
+    margin-left: auto;
+    transform: translateX(-40px); /* Animation to shift nav items */
+}
+
+    .nav-links li {
+        margin-left: 10px;
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #e74c3c;
+        }
+
+/* ===== Home Page Styling ===== */
+.home-content h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: yellowgreen;
+    font-family: 'Calisto MT';
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    animation: moveUpDown 3s infinite ease-in-out; /* Continuous up and down movement for the title */
+}
+
+.home-content p {
+    font-size: 22px;
+    max-width: 700px;
+    color: violet;
+    font-family: 'Calisto MT';
+    line-height: 1.6;
+    font-weight: bold;
+    animation: moveUpDown 3s infinite ease-in-out; /* Continuous up and down movement for the paragraph */
+}
+
+/* ===== Button Hover Effects (Popping In and Out) ===== */
+.btn-container {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #e74c3c;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 5px;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+    animation: popInOut 2s infinite ease-in-out; /* Popping effect for buttons */
+}
+
+    .btn:hover {
+        background-color: #c0392b;
+        transform: scale(1.1); /* Slight pop effect on hover */
+    }
+
+.btn-secondary {
+    background-color: #3498db;
+}
+
+    .btn-secondary:hover {
+        background-color: #2980b9;
+        transform: scale(1.1);
+    }
+
+/* ===== About Page Styling ===== */
+.about-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 10%;
+    gap: 50px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Left Section - About Content */
+.about-left {
+    flex: 1;
+    text-align: left;
+    animation: slideInLeft 1.2s ease-in-out;
+}
+
+    .about-left h1 {
+        font-size: 40px;
+        color: #222;
+        font-weight: bold;
+        margin-bottom: 20px;
+        border-left: 5px solid #e74c3c;
+        padding-left: 10px;
+    }
+
+    .about-left p {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #555;
+        margin-bottom: 20px;
+    }
+
+/* Contact Me Button */
+.contact-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    padding: 14px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+    .contact-btn:hover {
+        background-color: #c0392b;
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+    }
+
+/* Right Section - Skills */
+.about-right {
+    flex: 1;
+    text-align: left;
+    animation: slideInRight 1.2s ease-in-out;
+}
+
+    .about-right h2 {
+        font-size: 30px;
+        color: #333;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+/* Skills Grid */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+    .skills-container span {
+        background: #eeeeee;
+        padding: 12px 20px;
+        border-radius: 25px;
+        font-size: 16px;
+        color: #444;
+        font-weight: bold;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+
+        .skills-container span:hover {
+            background: #e74c3c;
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
+        }
+
+/* ===== Animation Keyframes ===== */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ===== Projects Section Styling ===== */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 60px 10%;
+    background-color: #ffffff;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Each Project Card */
+.project {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    animation: slideInUp 1.2s ease-in-out;
+}
+
+    .project:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+    }
+
+/* Project Image */
+.project-image {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project:hover .project-image {
+    transform: scale(1.05);
+}
+
+/* Project Description */
+.project-description {
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+    .project-description h2 {
+        font-size: 24px;
+        color: #333;
+        font-weight: bold;
+        margin-bottom: 10px;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .project-description p {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #555;
+        margin-bottom: 15px;
+    }
+
+/* Buttons */
+.code-button, .preview-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+    .code-button:hover, .preview-button:hover {
+        background-color: #c0392b;
+        transform: scale(1.1);
+        box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+    }
+
+.preview-button {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+    .preview-button:hover {
+        background-color: #2980b9;
+    }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project {
+        width: 80%;
+    }
+}
+
+/* ===== Animation Keyframes ===== */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Continuous Up and Down Movement for Welcome text and Paragraph */
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px); /* Moves the text slightly up */
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* ===== Contact Section Styling ===== */
+.contact-title-box {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin-top: 50px;
+    animation: fadeIn 2s ease-in-out; /* Fade-in animation */
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background for the contact section */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.contact-info {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-info strong {
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-info a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: normal;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.contact-info a:hover {
+    color: #2980b9;
+    transform: scale(1.1); /* Slight scale effect when hovered */
+}
+
+.contact-info:hover {
+    transform: translateX(10px); /* Horizontal sliding animation */
+}
+
+/* Icons for email and LinkedIn */
+.contact-info i {
+    font-size: 20px;
+    color: #3498db;
+    transition: color 0.3s;
+}
+
+.contact-info i:hover {
+    color: #2980b9;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+/* Footer styles */
+footer {
+    background-color: #333;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer-content p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icon {
+    font-size: 20px;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #e74c3c;
+}
+

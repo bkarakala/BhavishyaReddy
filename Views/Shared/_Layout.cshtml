@@ -1,0 +1,36 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Bhavishya Reddy</title>
+
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<body class="@(ViewData["Title"] != null && ViewData["Title"].ToString() == "Home" ? "home-container" : "default-container")">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="/" class="logo">Bhavishya Reddy</a>
+        <ul class="nav-links">
+            <li><a asp-controller="Home" asp-action="Index" class="@(ViewData["Title"] == "Home" ? "active" : "")">Home</a></li>
+            <li><a asp-controller="Home" asp-action="About" class="@(ViewData["Title"] == "About" ? "active" : "")">About</a></li>
+            <li><a asp-controller="Home" asp-action="Projects" class="@(ViewData["Title"] == "Projects" ? "active" : "")">Projects</a></li>
+            <li><a asp-controller="Home" asp-action="Contact" class="@(ViewData["Title"] == "Contact" ? "active" : "")">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        @RenderBody()
+    </div>
+
+</body>
+</html>

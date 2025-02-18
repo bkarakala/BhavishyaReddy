@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="home-content">
+    <h1>Welcome</h1>
+    <p>Hi, I'm <span>Bhavishya! </span>A .NET Developer passionate about building robust web applications and optimizing backend performance. Explore my portfolio to see how I leverage cutting-edge technologies to create efficient, scalable solutions.</p>
+
+    <div class="btn-container">
+        <!-- Projects Button -->
+        <a href="@Url.Action("Projects", "Home")" class="btn">
+            <i class="fas fa-folder"></i> Projects
+        </a>
+
+        <!-- Resume Download Button -->
+        <a href="/Resumes/Bhavishya%20Reddy%20.Net%20Developer.pdf" download="Bhavishya_Reddy_Resume.pdf" class="btn btn-secondary">
+            <i class="fas fa-download"></i> Resume
+        </a>
+
+    </div>
+</div>
+
+
